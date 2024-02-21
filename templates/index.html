@@ -1,0 +1,254 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru Prakirithi</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('moaUjbp1JXoFG-qkA');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                
+                // these IDs from the previous steps
+                emailjs.sendForm('service_cfref9q', 'template_07pnc5o', this)
+                    .then(function() {
+                        alert("Thank you for your message. We will get back to you soon.");
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+        </script>
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo">
+        <img src="{% static 'images/logo.png' %}" alt="">
+    </a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        
+        <a href="#products">products</a>
+        
+        <a href="#contact">contact</a>
+        
+    </nav>
+    <!-- <div class="video">
+    <video autoplay loop class="video-background" muted plays-inline>
+        <source src="videos/farm.mp4" type="video/mp4">
+    </video>
+</div> -->
+
+
+ 
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+    <div class="video">
+        <video autoplay loop class="video-background" muted plays-inline>
+            <source src="{% static 'videos/farm.mp4'  %}" type="video/mp4">
+        </video>
+    </div>
+    <div class="content">
+        <h3>Guru Prakirithi Agro Farm</h3>
+        <p>Agriculture in India contributes about 16% of our GDP and 10% of exports. Over 60% of the population still depends on agriculture. Agriculture is the most sacred and ancient profession. It provides food, shelter and clothing to all. Further supporting agriculture is supporting mother nature. India has the competitiveness in cost and climatic advantage to grow crops throughout the year. Thus, we are in agriculture.</p>
+        
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>about</span> us </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="{% static 'images/about.jpg' %}" alt="">
+        </div>
+
+        <div class="content">
+            <h3>Our Mission</h3>
+            <p>Our mission is to produce, aggregate, process and market vast range of agricultural produce to support farming and supply the finest quality of products to consumers keeping in mind the quality and health of the consumers. In that process we defined our motto to ‘save nature and save agriculture’. We are committed for sustainable agriculture and prepare ourself to meet the impact of climatic changes.</p>
+            <!--<p>content fill by sir</p>-->
+            <!--<a href="#" class="btn">learn more</a>-->
+        </div>
+
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- menu section starts  -->
+
+
+
+<!-- menu section ends -->
+
+<section class="products" id="products">
+
+    <h1 class="heading"> our <span>products</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            
+            <div class="image">
+                <img src="{% static 'images/toor.png'%}" alt="">
+            </div>
+            <div class="content">
+                <h3>Toor whole</h3>
+                
+                
+            </div>
+        </div>
+
+        <div class="box">
+            
+            <div class="image">
+                <img src="{% static 'images/Sugar.png' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>Sugar</h3>
+                
+                
+            </div>
+        </div>
+
+        <div class="box">
+           
+            <div class="image">
+                <img src="{% static 'images/greenpeas.png' %}" alt="">
+            </div>
+            <div class="content">
+                <h3>Green peas</h3>
+                
+               
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- review section starts  -->
+
+
+
+<!-- review section ends -->
+
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+
+    <h1 class="heading"> <span>Contact</span> us </h1>
+
+    <div class="row">
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.5907854474126!2d80.26607141482226!3d12.998004890838521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267d55a97158f%3A0xa20a0e55790f1fac!2sGuruprakirithi%20Agro%20Farm%20Private%20Limited!5e0!3m2!1sen!2sin!4v1662633452864!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <form id="contact-form">
+            <h3>get in touch</h3>
+            <div class="inputBox">
+                <span class="fas fa-user"></span>
+                <input type="text" name="user_name" placeholder="name">
+            </div>
+            <div class="inputBox">
+                <span class="fas fa-envelope"></span>
+                <input type="email" name="user_email" placeholder="email">
+            </div>
+            <div class="inputBox">
+                <span class="fas fa-question"></span>
+                <input type="text" name="message"  placeholder="Query">
+            </div>
+            <input type="submit"  value="Send" class="btn">
+        </form>
+
+    </div>
+
+</section>
+
+
+<section class="footer">
+
+    <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+        <a href="#" class="fab fa-pinterest"></a>
+    </div>
+
+    <div class="links">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        
+        <a href="#products">products</a>
+        
+        <a href="#contact">contact</a>
+        
+    </div>
+
+    <div class="credit">Copyright &copy; 2022 Guruprakirithi Agro Farm Private Limited, Chennai 600 090</div>
+
+</section>
+
+<!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
